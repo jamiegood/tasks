@@ -6,7 +6,8 @@ Todo::Application.routes.draw do
   
   
   devise_for :users
-
+  resources :users
+  
   resources :tasks
   root to: "tasks#index"
   match '/auth/:provider/callback' => 'authentications#create'

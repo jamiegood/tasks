@@ -6,10 +6,11 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :encrypted_password, :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
   has_many :authentications, :dependent => :delete_all
-  
+
+  has_many :tasks, dependent: :destroy  
   
   def apply_omniauth(auth)
     # In previous omniauth, 'user_info' was used in place of 'raw_info'

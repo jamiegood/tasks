@@ -6,11 +6,16 @@ gem 'omniauth-facebook'
 gem 'oauth2'
 
 gem 'rails', '3.2.8'
+gem 'faker', '1.0.1'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+
+group :development, :test do
+	gem 'mongrel', '>=1.2.0.pre2'
+end
 
 
 # Gems used only for assets and not required
